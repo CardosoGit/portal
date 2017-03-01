@@ -1,0 +1,45 @@
+<div class="row ">
+
+	<ba-card class=" col-md-6 col-sm-12 col-xs-12">
+		<div class="row">
+			<div class="col-md-12 ">
+				<h5>Locais de Atendimento</h5>
+				<ba-chartist-chart baChartistChartClass="ct-chart stacked-bar" baChartistChartType="Pie" [baChartistChartData]="dataAtendimentos['simplePieData']"
+					[baChartistChartOptions]="dataAtendimentos['simplePieOptions']" [baChartistChartResponsive]="getResponsive(20, 80)">
+				</ba-chartist-chart>
+			</div>
+		</div>
+	</ba-card>
+	<ba-card class=" col-md-6 col-sm-12 col-xs-12">
+		<div class="row">
+			<div class="col-md-12 ">
+				<h5>Tipos de Atendimentos</h5>
+				<ba-chartist-chart baChartistChartClass="ct-chart stacked-bar" baChartistChartType="Pie" [baChartistChartData]="dataCallTypes['simplePieData']"
+					[baChartistChartOptions]="dataCallTypes['simplePieOptions']" [baChartistChartResponsive]="getResponsive(20, 80)">
+				</ba-chartist-chart>
+			</div>
+		</div>
+	</ba-card>
+    <ba-card class=" col-md-6 col-sm-12 col-xs-12">
+		<div class="row">
+			<div class="col-md-12 ">
+				<h5>Tempo de Resolução de Problemas</h5>
+				<ba-chartist-chart baChartistChartClass="ct-chart stacked-bar" baChartistChartType="Pie"
+                               [baChartistChartData]="dataTimeToResolution['simplePieData']"
+                               [baChartistChartOptions]="dataTimeToResolution['simplePieOptions']"
+                               [baChartistChartResponsive]="getResponsive(20, 80)">
+				</ba-chartist-chart>
+			</div>
+		</div>
+	</ba-card>
+    <ba-card class=" col-md-6 col-sm-12 col-xs-12">
+		<div class="row">
+			<div class="col-md-12 col-lg-12">
+				<h5>Tipos de Serviços</h5>
+				<ba-chartist-chart baChartistChartClass="ct-chart stacked-bar" baChartistChartType="Pie" [baChartistChartData]="dataByService['simplePieData']"
+					[baChartistChartOptions]="dataByService['simplePieOptions']" [baChartistChartResponsive]="getResponsive(20, 80)">
+				</ba-chartist-chart>
+			</div>
+		</div>
+	</ba-card>
+</div>

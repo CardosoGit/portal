@@ -1,0 +1,49 @@
+<div class=" container ">
+	<div class="row detalhes-equip">
+		<div class="col-md-12 list-detalhe-title">
+			<h2>DETALHES DO EQUIPAMENTO</h2>
+		</div>
+		<div class="col-md-4">
+			<div class="configuracao">
+				<div [ngSwitch]="data.tipo">
+					<div *ngSwitchCase="'impressora'">
+						<ul>
+							<li><strong>Marca</strong> {{data.marca}}</li>
+							<li><strong>Modelo</strong> {{data.modelo}}</li>
+						</ul>
+					</div>
+					<div *ngSwitchCase="'computador'">
+						<ul>
+							<li><strong>Processador</strong> {{data.cpu}}</li>
+							<li><strong>Placa mãe</strong> {{data.motherboard}}</li>
+							<li><strong>Memória RAM</strong> {{data.ram}}</li>
+							<li><strong>Hard Disk HD</strong> {{data.hd}}</li>
+							<li><strong>Sistema Operacional</strong> {{data.so}}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div>
+				<ul>
+					<li><strong>Garantia</strong> {{data.garantia}}</li>
+					<li><strong>N° do Patrimonio</strong> {{data.patrimonio}}</li>
+					<li><strong>N° de Série</strong> {{data.numSerie}}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<ul>
+				<li><strong>Última revisão</strong> {{data.last_revision | date:'mediumDate'}}</li>
+				<li><strong>Último atendimento</strong> {{data.last_support | date:'mediumDate'}}</li>
+				<li><strong>Usuário</strong> Marketing</li>
+				<li><strong>Custo total com manutenção</strong>{{data.total_cost | currency:'BRL':true}}</li>
+				<li><strong>Custo de aquisição</strong> {{data.buy_cost | currency:'BRL':true}}</li>
+			</ul>
+		</div>
+		<div class="col-md-4">
+			<button class="btn btn-default btn-lg" >Histórico de Upgrade</button>
+			<button class="btn btn-default btn-lg">Abrir Chamado</button>
+		</div>
+	</div>
+
+</div>

@@ -1,3 +1,4 @@
+import { AuthService } from '../auth-service';
 import {Component, ViewEncapsulation} from '@angular/core';
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 
@@ -14,7 +15,7 @@ export class Login {
   public password:AbstractControl;
   public submitted:boolean = false;
 
-  constructor(fb:FormBuilder) {
+  constructor(fb:FormBuilder, private authService: AuthService) {
     this.form = fb.group({
       'email': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
@@ -28,7 +29,7 @@ export class Login {
     this.submitted = true;
     if (this.form.valid) {
       // your code goes here
-      // console.log(values);
+      this.authService.login(values);
     }
   }
 }

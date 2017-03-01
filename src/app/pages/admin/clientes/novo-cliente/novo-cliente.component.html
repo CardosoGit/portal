@@ -1,0 +1,103 @@
+<div class="row">
+	<div class="col-md-6">
+		<ba-card title="Descrição" baCardClass="with-scroll">
+			<form>
+				<div class="form-group">
+					<label for="input01">Nome Fantasia</label>
+					<input type="text" [(ngModel)]="dadosCnpj.fantasia" name="fantasia" class="form-control" id="input01" placeholder="Nome Fantasia">
+				</div>
+				<div class="form-group">
+					<label for="input01">Razão Social</label>
+					<input type="text" class="form-control" id="input01" name="nome" [(ngModel)]="dadosCnpj.nome" placeholder="Razão Social">
+				</div>
+				<div class="form-group">
+					<label for="input01">CNPJ</label>
+					<input type="text" class="form-control" name="cnpj" [(ngModel)]="dadosCnpj.cnpj" id="input01" placeholder="CNPJ">
+					<button class="btn btn-danger" (click)="getCnpj()" type="button">Go!</button>
+				</div>
+				<div class="form-group">
+					<label for="input02">Email</label>
+					<input type="text" class="form-control" name="email" [(ngModel)]="dadosCnpj.email" id="input02" placeholder="Email">
+				</div>
+				<div class="form-group">
+					<label for="input02">Site</label>
+					<input type="text" class="form-control" name="site" id="input02" [(ngModel)]="dadosCnpj.site" placeholder="Site">
+				</div>
+				<div class="form-group">
+					<label for="input02">Proprietário</label>
+					<input type="text" class="form-control" name="proprietario" [(ngModel)]="dadosCnpj.proprietario" id="input02" placeholder="Proprietário">
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="input02">Telefone Fixo</label>
+							<input type="text" name="telefone_fixo" class="form-control" id="input02" [(ngModel)]="dadosCnpj.telefone_fixo" placeholder="Telefone Fixo">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="input02">Telefone Auxiliar</label>
+							<input type="text" name="telefone_auxiliar" [(ngModel)]="dadosCnpj.telefone_auxiliar" class="form-control" id="input02" placeholder="Telefone Auxiliar">
+						</div>
+						<span>{{dadosCnpj.telefone_auxiliar}}</span>
+					</div>
+				</div>
+
+
+
+			</form>
+		</ba-card>
+	</div>
+	<div class="col-md-6">
+		<ba-card title="Endereço" baCardClass="with-scroll">
+			<form>
+				<div class="form-group">
+					<label for="input01">Rua</label>
+					<input type="text" class="form-control" id="input01" name="logradouro" [(ngModel)]="dadosCnpj.logradouro" placeholder="Logradouro">
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="input01">Numero</label>
+							<input type="text" class="form-control" id="input01" name="numero" [(ngModel)]="dadosCnpj.numero" placeholder="Numero">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="input01">Bairro</label>
+							<input type="text" class="form-control" id="input01" name="bairro" [(ngModel)]="dadosCnpj.bairro" placeholder="Bairro">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="input01">Cidade</label>
+					<input type="text" class="form-control" id="input01" name="municipio" [(ngModel)]="dadosCnpj.municipio" placeholder="Cidade">
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="input01">CEP</label>
+							<input type="text" class="form-control" id="input01" name="cep" [(ngModel)]="dadosCnpj.cep" placeholder="CEP">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="input01">Estado</label>
+							<input type="text" class="form-control" id="input01" name="uf" [(ngModel)]="dadosCnpj.uf" placeholder="Estado">
+						</div>
+					</div>
+				</div>
+
+
+
+			</form>
+
+		</ba-card>
+		<div class="form-group row">
+			<div class="offset-sm-2 col-sm-10">
+				<button (click)="salvarCliente()" type="button" class="btn btn-default btn-lg">{{textsTemplate.btnCadastrar}}</button>
+			</div>
+		</div>
+	</div>
+
+</div>

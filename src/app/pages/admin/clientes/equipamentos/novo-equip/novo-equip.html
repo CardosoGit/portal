@@ -1,0 +1,92 @@
+
+<div class="row">
+	<div class="col-md-6">
+		<ba-card title="Descrição" baCardClass="with-scroll">
+			<form>
+				<div class="form-group">
+					<label for="input01">Descrição</label>
+					<input type="text" [(ngModel)]="equipamento.desc" name="desc" class="form-control" id="input01" placeholder="Descrição">
+				</div>
+				<div class="form-group">
+					<label for="input02">Status</label>
+					<input type="text" [(ngModel)]="equipamento.status" name="status" class="form-control" id="input02" placeholder="Status">
+				</div>
+				<div class="form-group">
+					<label for="input02">Numero de Série</label>
+					<input type="text" [(ngModel)]="equipamento.numero_serie" name="numero_serie" class="form-control" id="input02" placeholder="Numero de Série">
+				</div>
+				<div class="form-group">
+					<label for="input02">Patrimonio</label>
+					<input type="text" [(ngModel)]="equipamento.patrimonio" name="patrimonio" class="form-control" id="input02" placeholder="Patrimonio">
+				</div>
+				<div class="form-group">
+					<label for="input02">Garantia</label>
+					<input type="text" [(ngModel)]="equipamento.garantia" name="garantia" class="form-control" id="input02" placeholder="Garantia">
+				</div>
+				<div class="form-group">
+					<label for="exampleSelect1">Tipo</label>
+					<select name="tipo_equipamento" [(ngModel)]="tipo_equipamento" class="form-control" id="exampleSelect1">
+                        <option selected>Selecione um tipo</option>
+                         <option *ngFor="let item of tipos_equipamento" [ngValue]="item.value">{{item.nome}}</option>
+                    </select>
+				</div>
+				<!--<div class="form-group">
+					<label for="exampleSelect1">Status</label>
+					<select name="test" [(ngModel)]="teste" class="form-control" id="exampleSelect1">
+                        <option selected></option>
+                         <option *ngFor="let item of items2" [ngValue]="item.value">{{item.nome}}</option>
+                    </select>
+					<span>{{teste}}</span>
+				</div>-->
+			</form>
+		</ba-card>
+	</div>
+	<div class="col-md-6">
+		<ba-card title="Mais Informações" baCardClass="with-scroll">
+			<form>
+				<div class="form-group">
+					<label for="input01">Marca</label>
+					<input type="text" [(ngModel)]="equipamento.marca" name="marca" class="form-control" id="input01" placeholder="Marca">
+				</div>
+				<div class="form-group">
+					<label for="input01">Modelo</label>
+					<input type="text" [(ngModel)]="equipamento.modelo" name="modelo" class="form-control" id="input01" placeholder="Modelo">
+				</div>
+			</form>
+			<div [ngSwitch]="tipo_equipamento">
+				<div *ngSwitchCase="'computador'">
+					<form>
+						<div class="form-group">
+							<label for="input01">Placa mãe</label>
+							<input type="text" [(ngModel)]="equipamento.motherboard" name="motherboard" class="form-control" id="input01" placeholder="Placa mãe">
+						</div>
+						<div class="form-group">
+							<label for="input01">Processador (CPU)</label>
+							<input type="text" [(ngModel)]="equipamento.cpu" name="cpu" class="form-control" id="input01" placeholder="CPU">
+						</div>
+						<div class="form-group">
+							<label for="input02">HD (Hard Disk)</label>
+							<input type="text" [(ngModel)]="equipamento.hd" name="hd" class="form-control" id="input02" placeholder="HD">
+						</div>
+						<div class="form-group">
+							<label for="input03">Memória RAM</label>
+							<input type="text" [(ngModel)]="equipamento.ram" name="ram" class="form-control" id="input03" placeholder="Memória">
+						</div>
+
+						<div class="form-group">
+							<label for="input03">Sistema Operacional</label>
+							<input type="text" [(ngModel)]="equipamento.so" name="so" class="form-control" id="input03" placeholder="Sistema Operacional">
+						</div>
+
+					</form>
+				</div>
+			</div>
+
+		</ba-card>
+		<div class="form-group row">
+			<div class="offset-sm-2 col-sm-10">
+				<button type="button" (click)="alterar()" class="btn btn-default btn-lg">{{textsTemplate.btnCadastrar}}</button>
+			</div>
+		</div>
+	</div>
+</div>

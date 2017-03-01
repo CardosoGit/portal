@@ -1,0 +1,86 @@
+{
+    "ativos": {
+        "Computador $1": {
+            "desc": "ComputadorMarketing",
+            "tipo": "computador",
+            "status": "EMUSO",
+            "cpu": "Pentium4",
+            "ram": "4GB",
+            "hd": "Seagate500GB",
+            "motherboard": "Intel",
+            "so": "Windows10",
+            "garantia": "1ano",
+            "patrimonio": "458744",
+            "numSerie": "aser787878"
+        },
+        "Computador $2": {
+            "desc": "ComputadorMarketing",
+            "tipo": "computador",
+            "status": "EMUSO",
+            "cpu": "Pentium4",
+            "ram": "4GB",
+            "hd": "Seagate500GB",
+            "motherboard": "Intel",
+            "so": "Windows10",
+            "garantia": "1ano",
+            "patrimonio": "458744",
+            "numSerie": "aser787878"
+        }
+    },
+    "historico": {
+        "Computador $1": {
+            "Chamada $1": {
+                "dataAbertura": "10/10/2015",
+                "descProblema": "Não Liga",
+                "descSolucao": "Fonte Queimada",
+                "tempAtendimento": "2horas",
+                "tecnico": "João Carlos",
+                "notaAvaliacao": "10",
+                "inicioAtendimento": "14:00",
+                "fimAtendimento": "13:00",
+                "totalServico": "R$50,00",
+                "tipoAtendimento": "Remoto"
+            },
+            "Chamada $2": {
+                "dataAbertura": "10/10/2015",
+                "descProblema": "Não Liga",
+                "descSolucao": "Fonte Queimada",
+                "tempAtendimento": "2horas",
+                "tecnico": "João Carlos",
+                "notaAvaliacao": "10",
+                "inicioAtendimento": "14:00",
+                "fimAtendimento": "13:00",
+                "totalServico": "R$50,00",
+                "tipoAtendimento": "Remoto"
+            }
+        }
+    },
+    "Chamados": {
+        "Chamado $1": {
+            "dataAbertura": "10/10/2015",
+            "descProblema": "Não Liga",
+            "descSolucao": "Fonte Queimada",
+            "tempAtendimento": "2horas",
+            "tecnico": "João Carlos",
+            "notaAvaliacao": "10",
+            "inicioAtendimento": "14:00",
+            "fimAtendimento": "13:00",
+            "totalServico": "R$50,00",
+            "tipoAtendimento": "Remoto",
+            "status": "Aberto"
+        },
+        "Chamado $2": {
+            "dataAbertura": "10/10/2015",
+            "descProblema": "Não Liga",
+            "descSolucao": "Fonte Queimada",
+            "tempAtendimento": "2horas",
+            "tecnico": "João Carlos",
+            "notaAvaliacao": "10",
+            "inicioAtendimento": "14:00",
+            "fimAtendimento": "13:00",
+            "totalServico": "R$50,00",
+            "tipoAtendimento": "Remoto",
+            "status": "Aberto"
+        }
+    }
+}

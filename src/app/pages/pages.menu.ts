@@ -15,11 +15,47 @@ export const PAGES_MENU = [
         }
       },
       {
+        path: 'chamados',
+        data: {
+          menu: {
+            title: 'Chamados',
+            icon: 'ion-ios-compose',
+            selected: false,
+            expanded: false,
+            order: 100,
+          }
+        }
+      },
+      {
+        path: 'equipamentos',
+        data: {
+          menu: {
+            title: 'Equipamentos',
+            icon: 'ion-mouse',
+            selected: false,
+            expanded: false,
+            order: 100,
+          }
+        }
+      },
+      {
         path: 'editors',
         data: {
           menu: {
-            title: 'Editors',
-            icon: 'ion-edit',
+            title: 'Pagamentos',
+            icon: 'ion-card',
+            selected: false,
+            expanded: false,
+            order: 100,
+          }
+        }
+      },
+      {
+        path: 'gestao-chamados',
+        data: {
+          menu: {
+            title: 'Gestão de Chamados',
+            icon: 'ion-card',
             selected: false,
             expanded: false,
             order: 100,
@@ -27,15 +63,53 @@ export const PAGES_MENU = [
         },
         children: [
           {
-            path: 'ckeditor',
+            path: 'chamados',
             data: {
               menu: {
-                title: 'CKEditor',
+                title: 'Chamados',
+                selected: false,
+                expanded: false,
+                order: 100,
+              }
+            }
+          },
+          {
+            path: 'clientes',
+            data: {
+              menu: {
+                title: 'Clientes',
+                selected: false,
+                expanded: false,
+                order: 100,
               }
             }
           }
         ]
       },
+      {
+        path: 'sms',
+        data: {
+          menu: {
+            title: 'SMS',
+            icon: 'ion-mouse',
+            selected: false,
+            expanded: false,
+            order: 100,
+          }
+        }
+      },
+      {
+        path: 'messages',
+        data: {
+          menu: {
+            title: 'Mensagens',
+            icon: 'ion-mouse',
+            selected: false,
+            expanded: false,
+            order: 100,
+          }
+        }
+      }
       //{
       //  path: 'components',
       //  data: {
@@ -58,273 +132,7 @@ export const PAGES_MENU = [
       //    }
       //  ]
       //},
-      {
-        path: 'charts',
-        data: {
-          menu: {
-            title: 'Charts',
-            icon: 'ion-stats-bars',
-            selected: false,
-            expanded: false,
-            order: 200,
-          }
-        },
-        children: [
-          {
-            path: 'chartist-js',
-            data: {
-              menu: {
-                title: 'Chartist.Js',
-              }
-            }
-          }
-        ]
-      },
-      {
-        path: 'ui',
-        data: {
-          menu: {
-            title: 'UI Features',
-            icon: 'ion-android-laptop',
-            selected: false,
-            expanded: false,
-            order: 300,
-          }
-        },
-        children: [
-          {
-            path: 'typography',
-            data: {
-              menu: {
-                title: 'Typography',
-              }
-            }
-          },
-          {
-            path: 'buttons',
-            data: {
-              menu: {
-                title: 'Buttons',
-              }
-            }
-          },
-          {
-            path: 'icons',
-            data: {
-              menu: {
-                title: 'Icons',
-              }
-            }
-          },
-          {
-            path: 'modals',
-            data: {
-              menu: {
-                title: 'Modals',
-              }
-            }
-          },
-          {
-            path: 'grid',
-            data: {
-              menu: {
-                title: 'Grid',
-              }
-            }
-          },
-        ]
-      },
-      {
-        path: 'forms',
-        data: {
-          menu: {
-            title: 'Form Elements',
-            icon: 'ion-compose',
-            selected: false,
-            expanded: false,
-            order: 400,
-          }
-        },
-        children: [
-          {
-            path: 'inputs',
-            data: {
-              menu: {
-                title: 'Form Inputs',
-              }
-            }
-          },
-          {
-            path: 'layouts',
-            data: {
-              menu: {
-                title: 'Form Layouts',
-              }
-            }
-          }
-        ]
-      },
-      {
-        path: 'tables',
-        data: {
-          menu: {
-            title: 'Tables',
-            icon: 'ion-grid',
-            selected: false,
-            expanded: false,
-            order: 500,
-          }
-        },
-        children: [
-          {
-            path: 'basictables',
-            data: {
-              menu: {
-                title: 'Basic Tables',
-              }
-            }
-          },
-          {
-            path: 'smarttables',
-            data: {
-              menu: {
-                title: 'Smart Tables',
-              }
-            }
-          }
-        ]
-      },
-      {
-        path: 'maps',
-        data: {
-          menu: {
-            title: 'Maps',
-            icon: 'ion-ios-location-outline',
-            selected: false,
-            expanded: false,
-            order: 600,
-          }
-        },
-        children: [
-          {
-            path: 'googlemaps',
-            data: {
-              menu: {
-                title: 'Google Maps',
-              }
-            }
-          },
-          {
-            path: 'leafletmaps',
-            data: {
-              menu: {
-                title: 'Leaflet Maps',
-              }
-            }
-          },
-          {
-            path: 'bubblemaps',
-            data: {
-              menu: {
-                title: 'Bubble Maps',
-              }
-            }
-          },
-          {
-            path: 'linemaps',
-            data: {
-              menu: {
-                title: 'Line Maps',
-              }
-            }
-          }
-        ]
-      },
-      {
-        path: '',
-        data: {
-          menu: {
-            title: 'Pages',
-            icon: 'ion-document',
-            selected: false,
-            expanded: false,
-            order: 650,
-          }
-        },
-        children: [
-          {
-            path: ['/login'],
-            data: {
-              menu: {
-                title: 'Login'
-              }
-            }
-          },
-          {
-            path: ['/register'],
-            data: {
-              menu: {
-                title: 'Register'
-              }
-            }
-          }
-        ]
-      },
-      {
-        path: '',
-        data: {
-          menu: {
-            title: 'Menu Level 1',
-            icon: 'ion-ios-more',
-            selected: false,
-            expanded: false,
-            order: 700,
-          }
-        },
-        children: [
-          {
-            path: '',
-            data: {
-              menu: {
-                title: 'Menu Level 1.1',
-                url: '#'
-              }
-            }
-          },
-          {
-            path: '',
-            data: {
-              menu: {
-                title: 'Menu Level 1.2',
-                url: '#'
-              }
-            },
-            children: [
-              {
-                path: '',
-                data: {
-                  menu: {
-                    title: 'Menu Level 1.2.1',
-                    url: '#'
-                  }
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        path: '',
-        data: {
-          menu: {
-            title: 'External Link',
-            url: 'http://akveo.com',
-            icon: 'ion-android-exit',
-            order: 800,
-            target: '_blank'
-          }
-        }
-      }
+
     ]
   }
 ];

@@ -1,0 +1,19 @@
+<div class="container">
+	<div class='item-active'>
+		<div class="row item">
+			<div class='col-md-4 equip'>{{data.desc | uppercase}} </div>
+			<div class='col-md-3 status'>{{data.status}}</div>
+			<div class="col-md-5 btn-list clearfix">
+				<button (click)='showDetalhes()' type="button" class="btn btn-info btn-with-icon"><i class="ion-android-download"></i>>Detalhes</button>
+				<button (click)='showHistory()' type="button" class="btn btn-primary btn-with-icon"><i class="ion-android-download"></i>Histórico de Suporte</button>
+			</div>
+
+		</div>
+		<div *ngIf="statusShowDetalhes" class="show-detalhes row">
+			<detalhes-equip [data]='data'></detalhes-equip>
+		</div>
+		<div *ngIf="statusShowHistory" class="show-detalhes row">
+			<list-history [id]="data.equipamentoKey"> </list-history>
+		</div>
+	</div>
+</div>

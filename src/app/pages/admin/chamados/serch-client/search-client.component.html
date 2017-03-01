@@ -1,0 +1,9 @@
+<form>
+	<div class="form-group">
+		<label for="input01">Cliente</label>
+		<input autocomplete="off" [(ngModel)]="typedName" name="nome_cliente" type="text" (keyup)="keyUp()" class="form-control" id="input01" placeholder="Pesquise o cliente">
+		<ul *ngIf="listOfClients.length > 0" class="dropListFiltered">
+			<li *ngFor="let client of listOfClients" (click)="selectClient(client)">{{client.nome}} | {{client.fantasia}}</li>
+		</ul>
+	</div>
+</form>

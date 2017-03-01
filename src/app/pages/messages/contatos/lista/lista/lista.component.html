@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-12">
+        <filter-contato [contatos]="contatos" [(modelContatos)]="contatosFiltrados"></filter-contato>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div *ngFor="let contato of contatosFiltrados" style="margin-bottom:10px">
+            <item-lista-contato  [contato]="contato" ></item-lista-contato>
+        </div>
+        
+    </div>
+</div>

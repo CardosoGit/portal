@@ -1,0 +1,9 @@
+<div class="row">
+	<div class="col-md-12">
+		<ba-card title="Lista de Contatos" baCardClass="with-scroll">
+			<div class="input-demo checkbox-demo row">
+				<ba-multi-checkbox (change)="change($event)" [(ngModel)]="clientes" [propertiesMapping]="checkboxPropertiesMapping"></ba-multi-checkbox>
+			</div>
+		</ba-card>
+	</div>
+</div>

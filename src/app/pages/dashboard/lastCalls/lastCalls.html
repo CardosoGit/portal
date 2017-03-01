@@ -1,0 +1,23 @@
+<div *ngFor="let item of list" class="calls-item row">
+	<div class="col-xs-9">
+		{{item.equipamento }} {{item.problema}}
+	</div>
+	<div class="col-xs-3 text-right">
+		{{item.data | date:'shortDate'}}
+	</div>
+</div>
+
+<!--<div class="popular-app-info row">
+  <div class="col-xs-4 text-left">
+    <div class="info-label">Total Visits</div>
+    <div>47,512</div>
+  </div>
+  <div class="col-xs-4 text-center">
+    <div class="info-label">New Visits</div>
+    <div>9,217</div>
+  </div>
+  <div class="col-xs-4 text-right">
+    <div class="info-label">Sales</div>
+    <div>2,928</div>
+  </div>
+</div>-->

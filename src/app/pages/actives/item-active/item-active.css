@@ -1,0 +1,33 @@
+.item-active .item{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+    
+}
+.item-active .equip , .item-active .status{
+    color: white;
+    font-size: 15px;
+}
+.item-active .btns button{
+    float: right;
+}  
+.item-active .btn-detalhes, .item-active .btn-history{
+    padding: 10px;
+    border: none;
+    color: white;
+}
+ .item-active .btn-detalhes{
+     margin-left: 10px;
+     background: #f0ad4e;
+ }
+ .item-active .btn-history{
+    background: #f95372;
+ }
+.item-active .show-detalhes{
+    margin-top: -10px;
+    margin-bottom: 10px;
+    transition:all 3s ease;
+}

@@ -1,0 +1,17 @@
+.list-history{
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+    color:#0a3c63;
+    padding: 10px 0;
+    .list-history-title{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 10px 10px ;
+        
+        h2{
+            padding: 0;
+            margin: 0;
+            font-size: 15px;
+        }
+        
+    }
+}

@@ -1,0 +1,24 @@
+<div class="container ">
+	<div class="row history-active">
+		<div class="col-md-6">
+
+			<div class="data-abertura"><strong>{{data.data | date:'mediumDate'}}</strong></div>
+			<p class="desc-problema">{{data.problema}}</p>
+			<p class="desc-resolucao">{{data.desc_soluc}}</p>
+		</div>
+		<div class="col-md-6">
+			<ul>
+				<li><strong>Tempo de Atendimento</strong> <span class="tempo-atend">{{(data.fimAtendimento - data.inicioAtendimento)/3600000}} horas</span></li>
+				<li><strong>Técnico</strong> {{data.tecnico}}</li>
+				<li><strong>Nota de Avaliação</strong>
+					<rating [(ngModel)]="data.notaAvaliacao" readonly='true' max="5" stateOn="ion-android-star"
+						stateOff="ion-android-star-outline" class="rating"></rating>{{data.notaAvaliacao}}
+				</li>
+				<li><strong>Inicio do Atendimento</strong> {{data.inicioAtendimento | date:'shortTime'}}</li>
+				<li><strong>Fim do Atendimento</strong> {{data.fimAtendimento | date:'shortTime'}}</li>
+				<li><strong>Total de Serviço</strong> {{data.totalServico}}</li>
+				<li><strong>Tipo de Atendimento</strong> {{data.tipo_suporte}}</li>
+			</ul>
+		</div>
+	</div>
+</div>

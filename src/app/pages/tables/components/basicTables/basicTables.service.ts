@@ -8,10 +8,10 @@ export class BasicTablesService {
   smartTableData = [
     {
       id: 1,
-      firstName: 'Mark',
-      lastName: 'Otto',
-      username: '@mdo',
-      email: 'mdo@gmail.com',
+      firstName: 'Computador',
+      lastName: 'Não Liga',
+      username: '10/10/2013',
+      email: 'Em uso ',
       age: '28'
     },
     {

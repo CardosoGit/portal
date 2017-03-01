@@ -1,0 +1,56 @@
+<div *ngFor="let alert of alerts">
+	<alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<a routerLink='novo' style="margin-bottom:20px" type="button" class="btn btn-primary btn-icon"><i class="ion-edit"></i>NOVO</a>
+	</div>
+</div>
+<div class="horizontal-scroll">
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Razão Social</th>
+				<th>Nome Fantasia</th>
+				<th>CNPJ</th>
+				<th>Telefone</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let cliente of clientes">
+				<td>
+					<a [routerLink]="['alterar', cliente.clientKey]" type="button" class="btn btn-primary btn-icon"><i class="ion-edit"></i></a>
+					<button (click)="showChildModal(cliente)" type="button" class="btn btn-danger btn-icon"><i class="ion-trash-a"></i></button>
+					<a [routerLink]="[cliente.clientKey, 'equipamentos']" type="button" class="btn btn-primary btn-icon">Equipamentos</a>
+				</td>
+				<td ngClass="nowrap">{{ cliente.nome }}</td>
+				<td>{{ cliente.fantasia }}</td>
+				<td>{{ cliente.cnpj }}</td>
+				<td>{{ cliente.telefone_fixo }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<router-outlet></router-outlet>
+
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" aria-label="Close" (click)="hideChildModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+				<h4 class="modal-title">Excluir Cliente</h4>
+			</div>
+			<div class="modal-body">
+				Você está prestes a excluir o cliente <strong>{{clienteToRemove?.nome}}</strong>. Você tem certeza?
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary confirm-btn" (click)="hideChildModal()">Não</button>
+				<button type="button" class="btn btn-primary" (click)="removeCliente()">Sim. Excluir!</button>
+			</div>
+		</div>
+	</div>
+</div>

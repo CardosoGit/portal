@@ -1,0 +1,7 @@
+<div style="position:relative">
+	<button (click)='toggle()'>Abrir</button>
+	<div style="position:absolute; top:22px; left:-200px; z-index:999; background:black" *ngIf="visibility">
+		<datepicker (selectionDone)="select($event)" name="data" [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="false" minMode="day"
+			[dateDisabled]="dateDisabled"></datepicker>
+	</div>
+</div>

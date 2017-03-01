@@ -1,0 +1,53 @@
+<!--<div *ngFor="let alert of alerts">
+	<alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+</div>-->
+
+<div class="row">
+	<div class="col-md-6">
+		<a routerLink='novo' style="margin-bottom:20px" type="button" class="btn btn-primary btn-icon"><i class="ion-edit"></i>NOVO</a>
+	</div>
+</div>
+<div class="horizontal-scroll">
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Equipamento</th>
+				<th>Status</th>
+				<th>Tipo</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let equipamento of equipamentos">
+				<td>
+					<a [routerLink]="[equipamento.equipamentoKey, 'alterar']" type="button" class="btn btn-primary btn-icon"><i class="ion-edit"></i></a>
+					<button (click)="showChildModal(equipamento)" type="button" class="btn btn-danger btn-icon"><i class="ion-trash-a"></i></button>
+				</td>
+				<td ngClass="nowrap">{{ equipamento.desc }}</td>
+				<td>{{ equipamento.status }}</td>
+				<td>{{ equipamento.tipo }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<router-outlet></router-outlet>
+
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" aria-label="Close" (click)="hideChildModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+				<h4 class="modal-title">Excluir Equipamento</h4>
+			</div>
+			<div class="modal-body">
+				Você está prestes a excluir o equipamento <strong>{{equipamentoToRemove?.desc}}</strong>. Você tem certeza?
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary confirm-btn" (click)="hideChildModal()">Não</button>
+				<button type="button" class="btn btn-primary" (click)="removeEquipamento()">Sim. Excluir!</button>
+			</div>
+		</div>
+	</div>
+</div>

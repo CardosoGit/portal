@@ -1,0 +1,8 @@
+<div class="sms-input sms-input-with-btn">
+	<label for="">Tags</label>
+	<input autocomplete="off" [(ngModel)]="typedTag" type="text" (keyup)="keyUp()" placeholder="Pesquise a Tag">
+	<button>Novo</button>
+	<ul *ngIf="listOfTags.length > 0" class="dropListFiltered">
+		<li *ngFor="let tag of listOfTags" (click)="selectTag(tag)">{{tag}}</li>
+	</ul>
+</div>

@@ -1,0 +1,17 @@
+<div class="row" style="position:relative" (click)="mouseEnter($event)" (mouseleave)="mouseLeave(contato.nome)">
+	<div class="col-md-12">
+		<table style="width:100%; padding:10px 0" >
+			<tr class="item-contato" >
+				<td style="width:200px">{{contato.nome}}</td>
+				<td>{{contato.telefone}}</td>
+				<td><button (click)="mens_enviadas(contato)">Mensagens Enviadas</button></td>
+				<td><button (click)="editar(contato)">Editar</button></td>
+				<td><button (click)="excluir(contato)">Excluir</button></td>
+			</tr>
+		</table>
+	</div>
+
+</div>
+<div #hoverView class="hoverview" style="z-index:999; background:black; position:fixed;  top:0;right:0;">
+
+</div>

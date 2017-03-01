@@ -1,0 +1,15 @@
+.dropListFiltered{
+    list-style: none;
+    padding: 5px;
+    border: 1px solid white;
+    li{
+        padding: 10px;
+        border-bottom: 1px solid white;
+        cursor: pointer;
+    }
+    li:hover{
+        background:white;
+        opacity: 0.5;
+        color: #282828;
+    }
+}

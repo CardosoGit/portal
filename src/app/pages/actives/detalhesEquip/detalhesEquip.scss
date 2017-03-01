@@ -1,0 +1,36 @@
+
+.detalhes-equip {  
+    position: relative;
+    color: #0a3c63;;
+    box-sizing: border-box; 
+    padding: 10px 0;  
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+    .col-md-4{
+        padding: 10px 0;
+    }
+
+}
+.detalhes-equip button{
+  width:90%;
+  margin-top:10px;
+}
+
+
+.list-detalhe-title{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 10px ;
+    
+    h2{
+        padding: 0;
+        margin: 0;
+        font-size: 15px;
+    }
+    
+}
+
+.detalhes-equip ul{
+    list-style: none;
+    padding: 0 0 0 10px;
+}
+

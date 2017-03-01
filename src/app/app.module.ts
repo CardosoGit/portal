@@ -1,4 +1,6 @@
-import { NgModule, ApplicationRef } from '@angular/core';
+import { AuthGuard } from './pages/guard/auth.guard';
+import { AuthService } from './pages/auth-service';
+import { ApplicationRef, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -17,6 +19,7 @@ import { AppState, InternalStateType } from './app.service';
 import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -29,6 +32,19 @@ type StoreType = {
   restoreInputValues: () => void,
   disposeOldHosts: () => void
 };
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyAx7F5CdxsmGuJC7pwzvZO6O4-meuaTXIY",
+  authDomain: "oma-painel-empresas.firebaseapp.com",
+  databaseURL: "https://oma-painel-empresas.firebaseio.com",
+  storageBucket: "oma-painel-empresas.appspot.com",
+  messagingSenderId: "839486789030"
+};
+
+const myFirebaseAuthConfig = {
+  provider: AuthProviders.Password,
+  method: AuthMethods.Password
+}
 
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
@@ -46,11 +62,17 @@ type StoreType = {
     ReactiveFormsModule,
     NgaModule.forRoot(),
     PagesModule,
-    routing
+    routing,
+    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS, {
+      provide: LOCALE_ID,
+      useValue: 'pt-BR'
+
+    },
+    AuthGuard, AuthService
   ]
 })
 

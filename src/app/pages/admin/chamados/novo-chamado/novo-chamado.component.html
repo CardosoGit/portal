@@ -1,0 +1,139 @@
+<!--<datepicker [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="true" [dateDisabled]="dateDisabled"></datepicker>
+{{dt}}-->
+<div class="row">
+	<div class="col-md-6">
+		<ba-card title="Cliente" baCardClass="with-scroll">
+			<search-client [(bindModelClients)]="cliente"></search-client>
+		</ba-card>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<ba-card title="Suporte" baCardClass="with-scroll">
+			<form>
+				<div class="form-group">
+					<label for="input01">Equipamento</label>
+					<div class="input-group">
+						<input type="text" class="form-control with-default-addon" name="equipamento" [(ngModel)]="chamado.equipamento" >
+						<span class="input-group-btn">
+								<button class="btn btn-default" type="button">Selecionar</button>
+							</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="input02">Problema</label>
+					<input type="text" class="form-control" name="problema" [(ngModel)]="chamado.problema">
+				</div>
+				<div class="form-group">
+					<label for="input03">Solução adotada</label>
+					<input type="text" name="desc_soluc" [(ngModel)]="chamado.desc_soluc" class="form-control">
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="exampleSelect1">Tipo de Suporte</label>
+							<select name="tipo_suporte" [(ngModel)]="chamado.tipo_suporte" class="form-control" id="exampleSelect1">
+								<option selected>Visita Virtual</option>
+								<option>Presencial</option>
+								<option>Telefone</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="exampleSelect1">Tipo de Atendimento</label>
+							<select name="tipo_atendimento" [(ngModel)]="chamado.tipo_atendimento" class="form-control" id="exampleSelect1">
+								<option selected>Incidentes</option>
+								<option>Dúvidas</option>
+								<option>Revisão</option>
+								<option>Problemas</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="input04">Valor do Serviço</label>
+							<input type="number" name="totalServico" [(ngModel)]="chamado.totalServico" class="form-control">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="exampleSelect1">Tipo de Servico</label>
+							<select name="status_servico" [(ngModel)]="chamado.tipo_servico" class="form-control" id="exampleSelect1">
+								<option selected>Conserto de Hardware</option>
+								<option>Problema de Software</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</form>
+		</ba-card>
+	</div>
+	<div class="col-md-6">
+		<ba-card title="Mais Informações" baCardClass="with-scroll">
+			<form>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="input01">Técnico</label>
+							<input type="text" name="tecnico" [(ngModel)]="chamado.tecnico" class="form-control" id="input01">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<!--<input type="text" name="data_abertura" value="{{dt?.getTime() | date:'mediumDate'}}" class="form-control" id="input01" >
+							<calendario [(modelData)]="dt"></calendario>-->
+							<calendario [label]="'Data Abertura'" [(dateModel)]="dt"></calendario>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="input02">Inicio do Atendimento</label>
+							<timepicker name="inicio_atendimento" [(ngModel)]="mytime" [showMeridian]="ismeridian"></timepicker>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="input03">Fim do Atendimento</label>
+							<timepicker name="fim_atendimento" [(ngModel)]="mytime" [showMeridian]="ismeridian"></timepicker>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="input04">Avaliação</label>
+							<div>
+								<rating name="avaliacao" [(ngModel)]="chamado.notaAvaliacao" readonly='true' max="5" stateOn="ion-android-star" stateOff="ion-android-star-outline"
+									class="rating"></rating>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="exampleSelect1">Status</label>
+							<select name="status_servico" [(ngModel)]="chamado.status" class="form-control" id="exampleSelect1">
+                        <option selected>Aberto</option>
+                        <option>Em Analise</option>
+                        <option>Finalizado</option>
+                    </select>
+						</div>
+					</div>
+				</div>
+
+
+
+			</form>
+		</ba-card>
+		<div class="form-group row">
+			<div class="offset-sm-2 col-sm-10">
+				<button type="button" (click)="add()" class="btn btn-default btn-lg">{{textsTemplate.btnCadastrar}}</button>
+			</div>
+		</div>
+	</div>
+</div>

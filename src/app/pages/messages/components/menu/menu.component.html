@@ -1,0 +1,9 @@
+<div class="row">
+	<div class="col-md-12">
+		<ul class="menu">
+			<li *ngFor="let item of items" routerLinkActive="active">
+				<a [routerLink]="[item.route]">{{item.desc}} </a>
+			</li>
+		</ul>
+	</div>
+</div>

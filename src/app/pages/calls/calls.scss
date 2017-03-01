@@ -1,0 +1,19 @@
+.calls{
+    .contrato{
+        color: white;
+        padding: 5px;
+        background: darkblue;
+        border-radius: 10%;
+    }
+}
+.modal{
+    color:black;
+}
+.history-active{
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.12);
+    padding: 10px 0;
+    width: 100%;
+    ul{
+        list-style: none;
+    }
+}

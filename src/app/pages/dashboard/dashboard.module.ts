@@ -7,6 +7,10 @@ import { Dashboard } from './dashboard.component';
 import { routing }       from './dashboard.routing';
 
 import { PopularApp } from './popularApp';
+import { LastCalls } from './lastCalls';
+import { PizzaCharts } from './pizzaCharts';
+import { MainProblems } from './mainProblems';
+import { RankingActiveBad } from'./rankingActiveBad';
 import { PieChart } from './pieChart';
 import { TrafficChart } from './trafficChart';
 import { UsersMap } from './usersMap';
@@ -21,6 +25,7 @@ import { PieChartService } from './pieChart/pieChart.service';
 import { TodoService } from './todo/todo.service';
 import { TrafficChartService } from './trafficChart/trafficChart.service';
 import { UsersMapService } from './usersMap/usersMap.service';
+import { DashboardService } from './dashboard.service';
 
 @NgModule({
   imports: [
@@ -34,11 +39,15 @@ import { UsersMapService } from './usersMap/usersMap.service';
     PieChart,
     TrafficChart,
     UsersMap,
+    RankingActiveBad,
+    LastCalls,
+    MainProblems,
     LineChart,
     Feed,
     Todo,
     Calendar,
-    Dashboard
+    Dashboard,
+    PizzaCharts
   ],
   providers: [
     CalendarService,
@@ -47,7 +56,8 @@ import { UsersMapService } from './usersMap/usersMap.service';
     PieChartService,
     TodoService,
     TrafficChartService,
-    UsersMapService
+    UsersMapService,
+    DashboardService
   ]
 })
 export default class DashboardModule {}

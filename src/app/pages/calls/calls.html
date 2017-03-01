@@ -1,0 +1,69 @@
+<div class="row">
+	<div class="col-md-6">
+		<a routerLink='novo' style="margin-bottom:20px" type="button" class="btn btn-primary btn-icon"><i class="ion-edit"></i>NOVO</a>
+	</div>
+</div>
+<div class="calls horizontal-scroll">
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th>EQUIPAMENTO</th>
+				<th>PROBLEMA</th>
+				<th>STATUS</th>
+				<th>DATA ABERTURA</th>
+				<th>#</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let chamada of chamadas">
+				<td style="text-align:left">{{ chamada.equipamento }} <strong class="contrato" *ngIf="chamada.equipContrato">contrato</strong></td>
+				<td>{{ chamada.problema }}</td>
+				<td>{{ chamada.status }}</td>
+				<td>{{ chamada.data | date:'shortDate' }}</td>
+				<td>
+					<button (click)="showChildModal(chamada.chamadoKey)">Ver</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" aria-label="Close" (click)="hideChildModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+				<h4 class="modal-title">Detalhes do Chamado</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row history-active">
+					<div class="col-md-6">
+
+						<div class="data-abertura"><strong>{{data.data | date:'mediumDate'}}</strong></div>
+						<p class="desc-problema">{{data.problema}}</p>
+						<p class="desc-resolucao">{{data.desc_soluc}}</p>
+					</div>
+					<div class="col-md-6">
+						<ul>
+							<li><strong>Tempo de Atendimento</strong> <span class="tempo-atend">{{(data.fimAtendimento - data.inicioAtendimento)/3600000}} horas</span></li>
+							<li><strong>Técnico</strong> {{data.tecnico}}</li>
+							<li><strong>Nota de Avaliação</strong>
+								<rating [(ngModel)]="data.notaAvaliacao" readonly='true' max="5" stateOn="ion-android-star" stateOff="ion-android-star-outline"
+									class="rating"></rating>{{data.notaAvaliacao}}
+							</li>
+							<li><strong>Inicio do Atendimento</strong> {{data.inicioAtendimento | date:'shortTime'}}</li>
+							<li><strong>Fim do Atendimento</strong> {{data.fimAtendimento | date:'shortTime'}}</li>
+							<li><strong>Total de Serviço</strong> {{data.totalServico}}</li>
+							<li><strong>Tipo de Atendimento</strong> {{data.tipo_suporte}}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary confirm-btn" (click)="hideChildModal()">Fechar</button>
+			</div>
+		</div>
+	</div>
+</div>

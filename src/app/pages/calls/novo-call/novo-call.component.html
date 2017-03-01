@@ -1,0 +1,32 @@
+<ba-full-calendar [baFullCalendarConfiguration]="calendarConfiguration" baFullCalendarClass="blurCalendar" (onCalendarReady)="onCalendarReady($event)">
+</ba-full-calendar>
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" aria-label="Close" (click)="hideChildModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+				<h4 class="modal-title">Detalhes do Chamado</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label>Equipamento</label>
+					<input type="text" [(ngModel)]="data.equipamento" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Problema</label>
+					<input type="text" [(ngModel)]="data.problema" class="form-control">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary confirm-btn" (click)="salvar()">Salvar</button>
+				<button class="btn btn-primary confirm-btn" (click)="deletar()">Deletar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div #hoverView class="hoverview" style="z-index:99999; background-color:black; color:white; position:fixed;  top:0;right:0;">
+	{{d.title}}
+</div>
